@@ -22,13 +22,6 @@ class ModelBuilder2(DataPreprocessing):
         #Test the model
         ANN_predicted = ANN_classifier.predict(X_test)
 
-        error = 0
-        for i in range(len(y_test)):
-            error += np.sum(ANN_predicted != y_test)
 
-        total_accuracy = 1 - error / len(y_test)
-
-        #get performance
-        self.accuracy = accuracy_score(y_test, ANN_predicted)
 
         return ANN_classifier
